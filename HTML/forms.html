@@ -7,12 +7,112 @@
 </head>
 <body>
     <h2>Forms</h2>
-    <form>
+    <form action="#" autocomplete="on" >
+        <fieldset> <legend>Personal Info</legend>
         <label for="captcha">Enter Captcha</label>
-        <input type="text" id="captcha" >
+        <input type="text" id="captcha"  placeholder="Enter captcha.." name="captcha">
         <br><br>
-        <input type="submit" value="Submit">
-        <input type="reset" value="Cancel">
+
+        <label type="email" name="email">Email</label>
+        <input type="email" id="email" placeholder="Enter email.." name="email">
+        <br><br>
+
+        <label type="password" name="password">Password: <span style="color: red;">*</span></label>
+        <input type="password" id="password" placeholder="Enter password.." name="password" required>
+        <br><br>
+
+        <label>Mobile:</label>
+        <input type="tel">
+        <br><br>
+
+        <label for="age">Age</label>
+        <input type="number" min="1" and max="150">
+        <br><br>
+
+         </fieldset>
+
+          <fieldset><legend>Other Details</legend>
+
+        <label> Time:</label>
+        <input type="time"><br><br>
+
+        <label> Date:</label>
+        <input type="Date"><br><br>
+
+        <label> Date and Time:</label>
+        <input type="datetime-local"><br><br>
+
+        <label>Linkdin URL</label>
+        <input type="url" placeholder="Enter Linkdin URL.."><br><br>
+
+        <label>Color</label>
+        <input type="color"><br><br>
+
+        <label>Search</label>
+        <input type="search" placeholder="Search.."><br><br>
+
+        <label>week</label>
+        <input type="week"><br><br>
+
+        <label>month</label>
+        <input type="month"><br><br>
+
+        <label>image</label>
+        <input type="image" src="media/IMG_20250928_152634.jpg" width="20"><br><br>
+
+        <label>Upload pancard</label>
+        <input type="file" accept=".pdf,.jpg,.jpeg"><br><br>   <!-- accept is used for specifying the types of files that the server accepts -->
+            </fieldset>
+
+            <fieldset><legend>Selection Comments</legend>
+        <range>Range</label>
+        <input type="range" min="1" max="100"><br><br>
+        
+        <label>Checkbox on clicking txt
+        <input type="checkbox" id="terms" name="terms" value="toSendValToServer">  <!-- name is used to store n send data to the server -->
+        </label>
+        <label for="terms">I agree to the terms and conditions</label><br><br>
+
+        <label>Radio on clicking txt
+        <input type="radio" id="male" name="gender" value="male">    <!-- name is used to store n send data to the server -->
+        </label>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <!-- the data will be hidden to the user but send to the user  -->
+        <label>Hide</label>
+        <input type="hidden" name="hiddenData" value="This is hidden data"><br><br>
+
+
+        <label for="tech">Dropdown</label>
+        <select name="tech" id="tech" multiple>  <!-- multiple is used to select multiple options =>  ctrl+option -->  
+            <option value="option1">HTML</option>
+            <option value="option2">CSS</option>
+            <option value="option3">JavaScript</option>
+        </select><br><br>
+
+
+        <label for="tech">Dropdown</label>
+        <select name="tech" id="tech" >  <!-- multiple is used to select multiple options =>  ctrl+option -->  
+            <option value="option1">HTML</option>
+            <option value="option2">CSS</option>
+            <option value="option3">JavaScript</option>
+        </select><br><br>
+
+
+        <label for="comments">Comments:</label><br>
+        <textarea placeholder="Enter comments..." row="5" col="10" name="comments" id="comments">Comments</textarea><br><br>
+         </fieldset><br><br>
+
+        
+        <input type="submit" value="Submit" name="data">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- &nbsp non brakable space -->
+         <!-- name is used to store n send data to the server -->
+        <input type="reset" value="Cancel"><br><br>
+        <button type="button" onclick="alert('Button Clicked')">Button</button>
+        <button type="button" value="disable" >Disable</button>
+
     </form>
 </body>
 </html>
