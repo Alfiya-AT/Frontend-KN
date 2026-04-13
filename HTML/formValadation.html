@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+<body>
+    <h2>User Form</h2>
+
+    <form autocomplete="on">
+        <lanel for="username">Username</label>
+        <!-- <input type="text" id="username" placeholder="Enter username.." name="username" pattern="^[a-zA-Z0-9]{2,20}$">S -->
+        <input type="text" id="username" placeholder="Enter username.." name="username" pattern="^[A-Z]{1}[a-z]{2,20}$">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
