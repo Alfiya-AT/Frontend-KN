@@ -1,0 +1,26 @@
+.container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: grid;
+/* number of col  => 200px for fixed size: => fr fraction;*/
+    /* grid-template-columns: auto 1fr 200px ; */
+    /* number of row */
+    /* grid-template-rows: 100px 200px 100px; */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.footer {
+    grid-area: footer;
+    background-color: lightgray;
+    padding: 20px;
+}
+.container div{
+    background-color: blueviolet;
+    border: 5px solid black;
+    padding: 20px;
+    /*     row   column */
+    gap: 10px 40px;
+    text-align: center;
+    font-size: 30px;
+}
