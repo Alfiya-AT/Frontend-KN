@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position properties</title>
+    <style>
+
+        div#static {
+            /* by default the positional property is static */
+            position: static;
+            /* it will remain @ same location as it is */
+            top: 50px;
+            left: 50px;
+            background-color: lightblue;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+        }
+        div#relative {
+            position: relative;
+            /* it will move from its original position */
+            top: 0px;
+            bottom:0px;
+            left: 110px;
+            right: 0px;
+            background-color: lightgreen;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+        }
+        
+        div#parent {
+            position: relative;
+            background-color: lightcoral;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+        }
+        div#child {
+            position: absolute;
+            background-color: lightblue;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            top:50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="static">Static Div</div>
+    <div id="relative">Relative Div</div>
+
+    <div id="parent">
+        <div id="child">absolute</div>
+    </div>
+</body>
+</html>

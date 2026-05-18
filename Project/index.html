@@ -1,11 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moms recipes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TastyBites - Premium Recipe App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+  <!-- NAVBAR -->
+  <header id="top">
+    <a href="#" class="logo">Tasty<span>Bites</span></a>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#recipes-section">Recipes</a>
+      <button id="themeToggle" class="btn-theme">🌙 Dark Mode</button>
+      <button id="addRecipeBtn" class="btn-add">+ Add Recipe</button>
+    </nav>
+  </header>
+
+  <!-- HERO + SEARCH -->
+  <section class="hero">
+    <h1>Find Your Next <span>Favourite</span> Recipe</h1>
+    <p>We currently have <span id="recipeCount">0</span> home-cooked recipes — breakfast, lunch, dinner & desserts</p>
+    <div class="search-bar">
+      <input type="search" id="searchInput" placeholder="Search recipes by name or ingredient...">
+      <button id="searchBtn">Search</button>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-section" id="recipes-section">
+    <label>Sort:</label>
+    <select name="sort" id="sortSelect">
+      <option value="default">Default</option>
+      <option value="time">Quickest first (Time)</option>
+      <option value="popular">Most popular (Rating)</option>
+    </select>
+
+    <label style="margin-left: 20px;">Category:</label>
+    <button class="pill active" data-filter="All">All</button>
+    <button class="pill" data-filter="Breakfast">🥞 Breakfast</button>
+    <button class="pill" data-filter="Lunch">🥗 Lunch</button>
+    <button class="pill" data-filter="Dinner">🍝 Dinner</button>
+    <button class="pill" data-filter="Dessert">🍰 Dessert</button>
+  </div>
+
+  <!-- RECIPE CARDS GRID -->
+  <p class="section-title">Popular <span>Recipes</span></p>
+
+  <!-- JS will populate all cards here! -->
+  <div class="cards-grid" id="recipeContainer"></div>
+
+  <!-- FEATURED RECIPE -->
+  <div class="featured-section">
+    <h2>Recipe of the <span>Week</span></h2>
+    <div class="featured-card">
+      <div class="featured-img"></div>
+      <div class="featured-info">
+        <span class="card-tag">Dinner · 35 min · Easy</span>
+        <h2>Chicken Ramen Bowl</h2>
+        <p>
+          A warming Japanese-inspired noodle soup with a rich broth,
+          tender chicken, soft-boiled egg and spring onions.
+        </p>
+        <h4>Ingredients</h4>
+        <ul>
+          <li>2 chicken breasts</li>
+          <li>200g ramen noodles</li>
+          <li>4 cups chicken broth</li>
+          <li>2 soft-boiled eggs</li>
+          <li>Soy sauce, ginger, garlic</li>
+          <li>Spring onions &amp; sesame seeds</li>
+        </ul>
+        <h4>Steps</h4>
+        <ol>
+          <li>Boil broth with ginger and garlic for 10 minutes.</li>
+          <li>Cook chicken in the broth until tender, then shred.</li>
+          <li>Cook noodles separately as per packet instructions.</li>
+          <li>Assemble bowl: noodles → broth → chicken → egg → toppings.</li>
+        </ol>
+        <a href="#" class="btn-cook">Start Cooking →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD RECIPE MODAL -->
+  <div class="modal-overlay" id="addRecipeModal">
+    <div class="modal-content">
+      <span class="modal-close" id="closeAddModal">&times;</span>
+      <h2 style="margin-bottom: 20px;">Add New <span>Recipe</span></h2>
+
+      <input type="text" id="newRecipeName" class="modal-input" placeholder="Recipe Name (e.g. Avocado Toast)">
+
+      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+        <select id="newRecipeCat" class="modal-input" style="flex: 1; margin-bottom: 0;">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Dessert">Dessert</option>
+        </select>
+        <select id="newRecipeDiff" class="modal-input" style="flex: 1; margin-bottom: 0;">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+        <input type="text" id="newRecipeTime" class="modal-input" placeholder="Time (e.g. 15)"
+          style="flex: 1; margin-bottom: 0;">
+        <input type="text" id="newRecipeImage" class="modal-input" placeholder="Image URL (optional)"
+          style="flex: 2; margin-bottom: 0;">
+      </div>
+
+      <textarea id="newRecipeDesc" class="modal-input" rows="3" placeholder="Brief Description..."></textarea>
+      <button id="submitNewRecipe" class="btn-cook" style="width: 100%">Add to Website</button>
+    </div>
+  </div>
+
+  <!-- VIEW RECIPE MODAL -->
+  <div class="modal-overlay" id="viewRecipeModal">
+    <div class="modal-content view-modal-content">
+      <span class="modal-close" id="closeViewModal">&times;</span>
+      <div id="viewRecipeImg" class="view-recipe-img"></div>
+      <div style="padding: 30px;">
+        <span class="card-tag" id="viewRecipeCat"
+          style="position: static; margin-bottom: 10px; display: inline-block;">Category</span>
+        <h2 id="viewRecipeTitle" style="font-size: 32px; margin-bottom: 10px; color: var(--text-color);">Title</h2>
+        <p id="viewRecipeDesc" style="color: var(--secondary-text); margin-bottom: 20px; line-height: 1.6;">Description
+        </p>
+
+        <div class="card-meta"
+          style="border-top: none; padding-top: 0; margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+          <span id="viewRecipeTime" class="time">⏱ 0 min</span>
+          <span id="viewRecipeRating">⭐ 0.0</span>
+          <span id="viewRecipeDiff">Difficulty</span>
+        </div>
+
+        <h4 style="text-align: left; margin-bottom: 10px; color: var(--accent-color); text-transform: uppercase;">
+          Ingredients</h4>
+        <ul id="viewRecipeIngList" class="modal-list"></ul>
+
+        <h4
+          style="text-align: left; margin-top: 20px; margin-bottom: 10px; color: var(--accent-color); text-transform: uppercase;">
+          Steps</h4>
+        <ol id="viewRecipeStepList" class="modal-list-ordered"></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <span>TastyBites</span> — Made with love and lots of garlic 🧄</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        body{
+            background-color: red;
+            animation-name: colorchange;
+            animation-duration: 5s;
+        }
+
+        h1{
+            animation-name: fadeIn;
+            animation-duration: 3s;
+        }
+
+        /* change color with respect to time */
+        /* @keyframes colorchange{
+            from{
+                background-color: red;
+            }
+            to{
+                background-color: blue;
+            }
+        } */
+
+        /* based on percentage of pg loading */
+        @keyframes colorchange{
+            20%{background-color: red;}
+            40%{background-color: blue;}
+            60%{background-color: green;}
+            80%{background-color: yellow;}
+            100%{background-color: pink;}
+        }
+
+        @keyframes fadeIn{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animations in CSS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Ipsum dicta necessitatibus excepturi illum porro cumque deserunt dolor, q
+        ui alias dignissimos enim, ipsam totam, praesentium architecto et possimus iure in facere.</p>
+</body>
+</html>

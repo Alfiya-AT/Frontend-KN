@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.sticky {
+            position: sticky;
+            top: 0;
+            background-color: lightblue;
+            padding: 5px;
+            text-align: center;
+            border: 2px solid blue;
+        }
+        div.fixed{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: lightcoral;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border: 2px solid darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sticky & Fixed property</h1>
+
+    <h2>Using position: sticky & fixed</h2>
+
+    <div class="sticky">This is a sticky div. It will stick to the top of the viewport when you scroll down.</div>
+    
+    <div class="fixed">This is a fixed div. It will always stay at the top of the viewport, even when you scroll down.</div>
+
+    <div style="padding-bottom: 2000px;">
+    <p>Scroll back up to rempove the stickyness!!</p>
+    <p>Scroll down to see the sticky effect</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis veniam quam iste velit recusandae et non eos dolor excepturi assumenda quos repudiandae voluptatibus provident numquam odio, dolores, ratione aperiam rerum?</p>
+        </div>
+</body>
+</html>

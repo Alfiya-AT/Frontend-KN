@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    .container{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        background-color: #e7ed9a;
+        padding: 10px; 
+        border: 3px solid black;   
+    }
+    .container  div{
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 18px;
+        border: 2px solid rgb(4, 136, 79);
+    }
+    .header{
+        grid-column-start: 1 ;
+        grid-column-end: 13;
+    }
+    .sidebar {
+         grid-row-start:2;
+         grid-row-end: 12;
+    }
+    .conatiner{
+        grid-column-start: 2;
+        grid-column-end: 12;
+        grid-row-start: 2;
+        grid-row-end: 12;
+    }
+    .Ads{
+        grid-row-start: 2;
+        grid-row-end: 7;
+    }
+    .Sidebar{
+        grid-row-start: 7;
+        grid-row-end: 12;
+    }    
+    .footer{
+        grid-column-start: 1 ;
+        grid-column-end: 13;
+    }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> the grid column property</h1>
+    <div class="container">
+        <div class="header">Header/company logo</div>
+        <div class="sidebar">side bar<br> <a href="#">Home</a><br><a href="#">About</a><br><a href="#">Contact</a></div>
+        <div class="conatiner">container<br> <p>lipson ipsumnfkjrfroijroifio ijei ijerefi ejrjeo m lipson ipsum lipson ipsum lipson ipsum </p></div>
+        <div class="Ads">Ads</div>
+        <div class="Sidebar">Sidebar</div>
+        <div class="footer">the footer</div>
+</body>
+</html>
