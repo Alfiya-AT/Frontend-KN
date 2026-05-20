@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradients</title>
+    <style>
+        #lg {
+            height: 200px;
+            width: 100%;
+            /* background: linear-gradient(to right, red, yellow, green); */
+            /* background: linear-gradient(to bottom right, red, yellow, green); */
+
+            /* by default it id horizontal */
+            /* background: linear-gradient( red, yellow, green); */
+
+            /* based on the degree */
+            /* background: linear-gradient(45deg, red, yellow, green); */
+
+            /* percentage of color */
+            background: linear-gradient(to right , red 20%, yellow 50%, green 100%);
+        }
+
+        #rg {
+            height: 200px;
+            width: 60%;
+            /* background: radial-gradient(red, yellow, green); */
+
+            /* circle shape */
+            /* background: radial-gradient(circle,yellow, red, green); */
+
+            /* position */
+            background: radial-gradient(circle at top left, yellow, red, green);
+        }
+
+        #cg {
+            height: 200px;
+            width: 200px;
+            /* background: conic-gradient(red, yellow, green); */
+
+            /* based on degree */
+            border-radius: 50%;
+            background: conic-gradient(red,yellow,green);
+            /* background: conic-gradient( red 0deg 90 deg, yellow 90deg 180deg, green 180deg 300sdeg, pruple 300deg 360deg); */
+        }
+    </style>
+</head>
+<body>
+    <h1>Linear Gradients</h1>
+    <div id="lg"></div>
+
+    <h1>Radial Gradients</h1>
+    <div id="rg"></div>
+    
+    <h1>Conical Gradients</h1>
+    <div id="cg"></div>
+
+    
+</body>
+</html>

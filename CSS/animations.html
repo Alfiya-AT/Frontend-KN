@@ -9,13 +9,21 @@
             background-color: red;
             animation-name: colorchange;
             animation-duration: 5s;
+            animation-iteration-count: infinite;
         }
 
         h1{
             animation-name: fadeIn;
             animation-duration: 3s;
+            animation-delay: 1s;
+            animation-timing-function: linear;
         }
-
+        
+        p{
+            animation-name: slideIn;
+            animation-duration: 3s;
+            animation-timing-function: ease-in;
+        }
         /* change color with respect to time */
         /* @keyframes colorchange{
             from{
@@ -43,11 +51,22 @@
                 opacity: 1;
             }
         }
+
+        @keyframes slideIn{
+            0%{
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100%{
+                transform: translateX(0);
+                opacity:1;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Animations in CSS</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    <p> tjis para will slide in form right to left Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Ipsum dicta necessitatibus excepturi illum porro cumque deserunt dolor, q
         ui alias dignissimos enim, ipsam totam, praesentium architecto et possimus iure in facere.</p>
 </body>
