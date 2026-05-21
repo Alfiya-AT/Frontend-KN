@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables</title>
+</head>
+<body>
+    <script>
+        // var a=10;
+        // a=20;//re - initialization
+        // const a=30; //re - declaration
+        
+        // console.log(a) ;
+        
+
+        // // scope - function variables
+        // function varvari(){
+        //     var name="Alfiya";
+        //     console.log(name);
+        // }
+        // varvari();
+
+
+        // // scope - let &const (block)
+        // if(true){
+        //     let z = 100;
+        //     const pi = 3.14;
+        //     console.log(z);
+        //     console.log(pi);
+        // }
+        // console.log(pi);
+
+        document.write("Variables <br>");
+
+        let a = 10;
+        console.log(typeof a,a);
+
+
+        let b = "a";
+        console.log(typeof b,b);
+
+        let c = "alfiya";
+        console.log(typeof c,c);
+        console.log("my name is "+ c);
+        console.log("my name is",c);
+
+
+        // ES6 string literals
+        console.log(`my name is ${c}`);
+
+        // boolean
+        let isvalid = true;
+        console.log(typeof isvalid,isvalid);
+
+        // null
+        let d = null;
+        console.log(typeof d,d);
+
+        // undefined
+        let e;
+        console.log(typeof e,e);
+
+        // symbol
+        let f = Symbol("id");
+        console.log(typeof f,f);
+        
+        let z = 10/0
+        console.log(z)
+
+        let payment = null;
+        console.log(typeof payment, payment)
+            
+
+        // bigint
+        let g = 100n;
+        console.log(typeof g, g);
+
+        // symbols
+        let s = Symbol("id");
+        console.log(typeof s, s);
+
+
+        // complex datatype
+        // array
+        let arr = [1,2,3,4,5];
+        console.log(typeof arr, arr);
+
+        // object
+        let obj = {name:"Alfiya", age:20};
+        console.log(typeof obj, obj);
+
+        // object
+
+        let person = {
+            name: "Alfiya",
+            age: 20
+        }
+        console.log( person.name);
+        console.log( Object.keys(person));
+        console.log(person)
+
+
+        // function
+        function add(a,b){
+            return a + b;
+        }
+        console.log(typeof add, add);
+        console.log(add(10,20));
+
+
+
+        
+    </script>
+</body>
+</html>
