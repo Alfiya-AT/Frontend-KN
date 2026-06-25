@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM methods</h1>
+    <p>getEelementsByTagName</p>
+    <p id="paraid" class = "bluetext">getElementById</p>
+    <p class = "bluetext">getElementsByClassName</p>
+    <p>getElementsbyname</p>
+    <h4 class="wb">Hello</h4>
+    <h4 class="wb">Thank u</h4>
+    <input type="text" placeholder="Enter you name" name="fullName">
+    <p id="paraValue">value displayed here</p>
+    <button onclick="changeColor()">click me to change color</button>
+
+    <script>   
+
+        
+        // let p=document.querySelectorAll("wb")
+        // or
+        let p=document.querySelectorAll("h4")
+        p.forEach((p) => { p.style.backgroundColor = "purple"; p.style.color = "white"; });
+        // document.getElementsByTagName("p")[0].style.color = "red";
+        // document.getElementsByTagName("p")[1].style.color = "green";
+        // document.getElementsByTagName("p")[2].style.color = "blue";
+        // document.getElementsByTagName("p")[3].style.color = "yellow";
+
+        document.querySelector("h1").innerHTML = "<h3><i>DOM methods in js</i></h3>";
+        // access only visible content 
+        // document.querySelector("h1").innerText = "DOM methods in js";
+        // visible as well as hidden 
+        document.querySelector("button").textContent = "Click";
+
+        document.getElementById("paraid").style.fontSize = "50px";
+
+        let bt = document.getElementsByClassName("bluetext");
+        for (let i = 0; i <= bt.length; i++) {
+            bt[i].style.color = "blue";
+            bt[i].style.backgroundColor = "green";
+        }
+        // even if single element is there it will return an array with combined style
+        document.getElementsByTagName("p")[0].style.color = "green";
+        
+
+        function changeColor() {
+
+        let x = document.getElementsByName("fullName")[0].value; 
+        document.getElementById("paraValue").innerText = x;
+
+
+        let paras = document.getElementsByTagName("p");
+        for (let i = 0; i < paras.length; i++) {
+            paras[i].style.color = "red";
+            paras[i].style.backgroundColor = "yellow";
+        }
+
+    }
+
+    </script>
+</body>
+</html>

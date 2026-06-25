@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute DOM</title>
+</head>
+<body>
+    <a href="https://app.kodnest.com" target="_blank">click to visit kodnest</a>
+    <br>
+    <button onclick="setAttr()">Set Attribute</button>
+    <button onclick="getAttr()">Get Attribute</button>
+    <button onclick="removeAttr()">Remove Attribute</button>
+
+    <script>
+        let link = document.querySelector('a');
+        function setAttr() {
+            link.setAttribute("href", "https://www.google.com");
+            link.innerText = "click to visit google";
+        }
+        function getAttr() {
+            let url=link.getAttribute("href");
+            alert("the url is "+url);
+        }
+
+        function removeAttr() {
+            let url=link.removeAttribute("href");
+            alert("the url is removed");
+        }
+    </script>
+
+</body>
+</html>
